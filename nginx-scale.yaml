@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx-scale
+spec:
+  replicas: 6
+  template:
+    metadata:
+      labels:
+        env: prod 
+    spec:
+      containers:
+      - name: nginx-scale
+        image: nginx:latest

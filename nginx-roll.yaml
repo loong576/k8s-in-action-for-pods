@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-roll
+  namespace: test02-namespace
+spec:
+  selector:
+    matchLabels:
+      env: prod
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        env: prod
+    spec:
+      containers:
+      - name: nginx-roll
+        image: nginx:1.17

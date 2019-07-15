@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: httpd-node
+spec:
+  template:
+    metadata:
+      labels:
+        env: prod
+    spec:
+      containers:
+      - name: httpd-node
+        image: httpd:latest
+      nodeSelector:
+        node: master
